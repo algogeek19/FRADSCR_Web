@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!--=============== THREE.JS (LOCAL) ===============-->
+    <script src="assets/js/three.min.js"></script>
+    <script src="assets/js/OrbitControls.js"></script>
+
+    <style>
+        .solar3d__container {
+            text-align: center;
+            padding: 2rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .solar3d__description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        #solar3d-canvas {
+            width: 100% !important;
+            height: 500px !important;
+            display: block !important;
+            background: linear-gradient(180deg, #1a1a2e, #0f0f1b);
+        }
+        .solar3d__fallback {
+            display: none;
+            color: #ff0000;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+
+    <title>FRADSCR</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">FRADSCR</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">More</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#predict1" class="nav__link">Predict</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#discover" class="nav__link">Discover</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#place" class="nav__link">Categories</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#solar3d" class="nav__link">3D Solar Flare</a>
+                    </li>
+                </ul>
+
+                <div class="nav__dark">
+                    <span class="change-theme-name">Dark mode</span>
+                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+                </div>
+
+                <i class="ri-close-line nav__close" id="nav-close"></i>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <img src="assets/img/16.jpg" alt="" class="home__img">
+
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <span class="home__data-subtitle">Discover more</span>
+                    <h1 class="home__data-title">Space is the Origin; <br> the <b>Curse <br> and the Blessing!</b></h1>
+                    <a href="#predict1" class="button">Predict Now</a>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.facebook.com/OfficialSolarFlare/" target="_blank" class="home__social-link">
+                        <i class="ri-facebook-box-fill"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nasa/p/CdHMPZJDfSV/" target="_blank" class="home__social-link">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a href="https://x.com/NASASun/status/1521664735938285568" target="_blank" class="home__social-link">
+                        <i class="ri-twitter-fill"></i>
+                    </a>
+                </div>
+                <div class="home__info">
+                    <div>
+                        <span class="home__info-title">5 most know Solar-Flares</span>
+                        <a href="https://www.esa.int/Science_Exploration/Space_Science/What_are_solar_flares" class="button button--flex button--link home__info-button">
+                            More <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+
+                    <div class="home__info-overlay">
+                        <img src="assets/img/3.jpg" alt="" class="home__info-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about">
+            <div class="about__container container grid">
+                <div class="about__data">
+                    <h2 class="section__title about__title">More Information <br> About The Solar-Flares</h2>
+                    <p class="about__description">Solar flares are relatively intense, localized emissions 
+            of electromagnetic radiation that occur in the Sun’s atmosphere. 
+         These explosive events release vast amounts of energy and are often associated with sunspots. The intensity of a 
+         solar flare determines its classification, with X-class flares being the most powerful, 
+         followed by M-, C-, and B-class flares
+                    </p>
+                    <p class="about__description">Solar flares are giant explosions on the sun that send energy, light and high speed particles into space. These 
+    flares are often associated with solar magnetic storms known as coronal mass ejections (CMEs). The number of solar flares increases approximately every 11 years, 
+ and the sun is currently moving towards another solar maximum, likely in 2013.</p>
+                    <a href="https://en.wikipedia.org/wiki/Solar_flare" class="button">Discover More</a>
+                </div>
+
+                <div class="about__img">
+                    <div class="about__img-overlay">
+                        <img src="assets/img/21.jpg" alt="" class="about__img-one">
+                    </div>
+
+                    <div class="about__img-overlay">
+                        <img src="assets/img/20.jpg" alt="" class="about__img-two">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about section" id="predict1">
+            <div class="about__container container grid">
+                <div class="about__data">
+                    <h2 class="section__title about__title">What is FRADSCR??</h2>
+                    <p class="about__description">The high school project known as FRADSCR, or Flare Radiation Assessment Detection System and Cubesat Response, is still changing the world. The main objective of this initiative is to mitigate Ethiopia's drought issues, which are caused by a solar cycle that occurs every ten years. East Africa is home to Ethiopia. The project's objective is to put in place a mechanism that would enable locals and the government to be adequately ready for upcoming shifts in space weather.
+                    </p>
+                    <p class="about__description">Based on data from NASA's RHESSI mission, this study developed a model that attempts to forecast solar flare strength for a specific year, either past or future. Use the button below to access the prediction.</p>
+                    <a href="https://en.wikipedia.org/wiki/Solar_flare" class="button1">Predict Now</a>
+                </div>
+
+                <div class="about__img">
+                    <div class="about__img-overlay">
+                        <img src="assets/img/R2.jpeg" alt="" class="about__img-one">
+                    </div>
+
+                    <div class="about__img-overlay">
+                        <img src="assets/img/OIP.jpeg" alt="" class="about__img-two">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!--==================== DISCOVER ====================-->
+        <section class="discover section" id="discover">
+            <h2 class="section__title">Discover the most <br> known Solar-Flares</h2>
+            
+            <div class="discover__container container swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="discover__card swiper-slide">
+                        <img src="assets/img/22.jpg" alt="" class="discover__img">
+                        <div class="discover__data">
+                            <h2 class="discover__title">X-class</h2>
+                            <span class="discover__description">>10^-4(W/m^2)</span>
+                        </div>
+                    </div>
+
+                    <div class="discover__card swiper-slide">
+                        <img src="assets/img/23.jpg" alt="" class="discover__img">
+                        <div class="discover__data">
+                            <h2 class="discover__title">M-class</h2>
+                            <span class="discover__description">10^-5-10^-4(W/m^2)</span>
+                        </div>
+                    </div>
+
+                    <div class="discover__card swiper-slide">
+                        <img src="assets/img/24.jpg" alt="" class="discover__img">
+                        <div class="discover__data">
+                            <h2 class="discover__title">A-class</h2>
+                            <span class="discover__description">10^-7(W/m^2)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== 3D SOLAR FLARE ====================-->
+        <section class="solar3d section" id="solar3d">
+            <h2 class="section__title">Explore Solar Flares in 3D</h2>
+            <div class="solar3d__container container">
+                <p class="solar3d__description">Interact with a 3D model of a solar flare to visualize its dynamic structure and intensity. Rotate and zoom to explore!</p>
+                <div id="solar3d-canvas"></div>
+                <p class="solar3d__fallback" id="solar3d-fallback">Unable to load 3D visualization. Please ensure WebGL is enabled, check your browser console for errors, and try a modern browser.</p>
+            </div>
+        </section>
+
+        <!--==================== EXPERIENCE ====================-->
+        <section class="experience section">
+            <h2 class="section__title">With Our Research & <br> Scientists Discoveries</h2>
+
+            <div class="experience__container container grid">
+                <div class="experience__content grid">
+                    <div class="experience__data">
+                        <h2 class="experience__number">11</h2>
+                        <span class="experience__description">Year <br> Solar Cycle</span>
+                    </div>
+
+                    <div class="experience__data">
+                        <h2 class="experience__number">5</h2>
+                        <span class="experience__description">Categories of <br> Solar-Flares</span>
+                    </div>
+
+                    <div class="experience__data">
+                        <h2 class="experience__number">With</h2>
+                        <span class="experience__description">Different <br> Strength</span>
+                    </div>
+                </div>
+
+                <div class="experience__img grid">
+                    <div class="experience__overlay">
+                        <img src="assets/img/13.jpg" alt="" class="experience__img-one">
+                    </div>
+                    
+                    <div class="experience__overlay">
+                        <img src="assets/img/7.jpg" alt="" class="experience__img-two">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== VIDEO ====================-->
+        <section class="video section">
+            <h2 class="section__title">Video Tour</h2>
+
+            <div class="video__container container">
+                <p class="video__description">Find out more with our video of the most beautiful Solar-Flares ever existed!!</p>
+                <div class="video__content">
+                    <video id="video-file">
+                        <source src="assets/video/video 2.mp4" type="video/mp4">
+                    </video>
+                    <button class="button button--flex video__button" id="video-button">
+                        <i class="ri-play-line video__button-icon" id="video-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== PLACES ====================-->
+        <section class="place section" id="place">
+            <h2 class="section__title">See More Solar-Flares</h2>
+
+            <div class="place__container container grid">
+                <div class="place__card">
+                    <img src="assets/img/1.jpg" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title">A-Class</h3>
+                            <span class="place__subtitle">Solar-Flare</span>
+                        </div>
+                    </div>
+                    <button class="button button--flex place__button">
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+
+                <div class="place__card">
+                    <img src="assets/img/2.jpeg" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title">B-Class</h3>
+                            <span class="place__subtitle">Solar-Flare</span>
+                        </div>
+                    </div>
+                    <button class="button button--flex place__button">
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+
+                <div class="place__card">
+                    <img src="assets/img/14.jpg" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title">C-Class</h3>
+                            <span class="place__subtitle">Solar-Flare</span>
+                        </div>
+                    </div>
+                    <button class="button button--flex place__button">
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+
+                <div class="place__card">
+                    <img src="assets/img/12.jpg" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title">X-Class</h3>
+                            <span class="place__subtitle">Solar-Flare</span>
+                        </div>
+                    </div>
+                    <button class="button button--flex place__button">
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+
+                <div class="place__card">
+                    <img src="assets/img/10.jpg" alt="" class="place__img">
+                    <div class="place__content">
+                        <div class="place__data">
+                            <h3 class="place__title">M-class</h3>
+                            <span class="place__subtitle">Solar-Flare</span>
+                        </div>
+                    </div>
+                    <button class="button button--flex place__button">
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== SUBSCRIBE ====================-->
+        <section class="subscribe section">
+            <div class="subscribe__bg">
+                <div class="subscribe__container container">
+                    <h2 class="section__title subscribe__title">Join Our <br> Community </h2>
+                    <p class="subscribe__description">Join to our Community and discover about Solar-Flares.</p>
+                    <form action="" class="subscribe__form">
+                        <input type="text" placeholder="Enter email" class="subscribe__input">
+                        <button class="button">Join</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!--==================== SPONSORS ====================-->
+        <section class="sponsor section">
+            <div class="sponsor__container container grid">
+                <div class="sponsor__content">
+                    <a href='https://www.spacex.com'><img src="assets/img/sps 1.png" alt="" class="sponsor__img"></a>
+                </div>
+                <div class="sponsor__content">
+                    <a href='https://www.boeing.com'><img src="assets/img/sps 2.png" alt="" class="sponsor__img"></a>
+                </div>
+                <div class="sponsor__content">
+                    <a href='https://www.nasa.gov'><img src="assets/img/sps 5.jpg" alt="" class="sponsor__img"></a>
+                </div>
+                <div class="sponsor__content">
+                    <a href='https://www.rtx.com'><img src="assets/img/sps 3.png" alt="" class="sponsor__img"></a>
+                </div>
+                <div class="sponsor__content">
+                    <a href='https://www.lockheedmartin.com'><img src="assets/img/sps 4.png" alt="" class="sponsor__img"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content grid">
+                <div class="footer__data">
+                    <h3 class="footer__title">Explore</h3>
+                    <p class="footer__description">Discover more <br> sciences in the universe, it is <br> free!!</p>
+                    <div>
+                        <a href="https://www.facebook.com/spacenewsx/" target="_blank" class="footer__social">
+                            <i class="ri-facebook-box-fill"></i>
+                        </a>
+                        <a href="https://x.com/SpaceX" target="_blank" class="footer__social">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/spacex/" target="_blank" class="footer__social">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCtI0Hodo5o5dUb67FeUjDeA" target="_blank" class="footer__social">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Quick Links</h3>
+                    <ul>
+                        <li class="footer__item">
+                            <a href="#home" class="footer__link">Home</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#about" class="footer__link">About</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#discover" class="footer__link">Discover</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#place" class="footer__link">Categories</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#solar3d" class="footer__link">3D Solar Flare</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Company</h3>
+                    <ul>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Team</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Become a member</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__data">
+                    <h3 class="footer__subtitle">Support</h3>
+                    <ul>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">FAQs</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Support Center</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__rights">
+                <p class="footer__copy"> @ FRADSCR | All rigths reserved.</p>
+                <div class="footer__terms">
+                    <a href="#" class="footer__terms-link">Terms & Agreements</a>
+                    <a href="#" class="footer__terms-link">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup__icon"></i>
+    </a>
+
+    <!--=============== SCROLL REVEAL===============-->
+    <script src="assets/js/scrollreveal.min.js"></script>
+    
+    <!--=============== SWIPER JS ===============-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=============== 3D SOLAR FLARE JS ===============-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvasContainer = document.getElementById('solar3d-canvas');
+            const fallback = document.getElementById('solar3d-fallback');
+
+            // Check if canvas container exists
+            if (!canvasContainer) {
+                console.error('Error: #solar3d-canvas element not found in DOM');
+                if (fallback) fallback.style.display = 'block';
+                return;
+            }
+
+            // Check if Three.js is loaded
+            if (typeof THREE === 'undefined') {
+                console.error('Error: Three.js library not loaded. Check assets/js/three.min.js');
+                if (fallback) fallback.style.display = 'block';
+                return;
+            }
+
+            // Check if OrbitControls is loaded
+            if (typeof THREE.OrbitControls === 'undefined') {
+                console.error('Error: OrbitControls not loaded. Check assets/js/OrbitControls.js');
+                if (fallback) fallback.style.display = 'block';
+                return;
+            }
+
+            // Check WebGL support
+            const gl = document.createElement('canvas').getContext('webgl');
+            if (!gl) {
+                console.error('Error: WebGL is not supported or disabled in this browser');
+                if (fallback) fallback.style.display = 'block';
+                return;
+            }
+
+            try {
+                // Initialize Three.js scene
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(75, canvasContainer.clientWidth / 500, 0.1, 1000);
+                const renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(canvasContainer.clientWidth, 500);
+                canvasContainer.appendChild(renderer.domElement);
+
+                // Add OrbitControls for interactivity
+                const controls = new THREE.OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.05;
+
+                // Create Sun
+                const sunGeometry = new THREE.SphereGeometry(5, 32, 32);
+                const sunMaterial = new THREE.MeshBasicMaterial({
+                    color: 0xff4500,
+                    wireframe: false
+                });
+                const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+                scene.add(sun);
+
+                // Create Flare
+                const flareGeometry = new THREE.BufferGeometry();
+                const flareVertices = [];
+                const flareColors = [];
+                for (let i = 0; i < 500; i++) {
+                    const theta = Math.random() * 2 * Math.PI;
+                    const phi = Math.acos(2 * Math.random() - 1);
+                    const r = 5 + Math.random() * 2;
+                    flareVertices.push(
+                        r * Math.sin(phi) * Math.cos(theta),
+                        r * Math.sin(phi) * Math.sin(theta),
+                        r * Math.cos(phi)
+                    );
+                    flareColors.push(1, Math.random() * 0.5 + 0.5, 0); // Orange-red flares
+                }
+                flareGeometry.setAttribute('position', new THREE.Float32BufferAttribute(flareVertices, 3));
+                flareGeometry.setAttribute('color', new THREE.Float32BufferAttribute(flareColors, 3));
+                const flareMaterial = new THREE.PointsMaterial({
+                    size: 0.1,
+                    vertexColors: true,
+                    transparent: true,
+                    opacity: 0.8
+                });
+                const flare = new THREE.Points(flareGeometry, flareMaterial);
+                scene.add(flare);
+
+                // Camera position
+                camera.position.z = 15;
+
+                // Animation loop
+                function animate() {
+                    requestAnimationFrame(animate);
+                    sun.rotation.y += 0.005;
+                    flare.rotation.y += 0.01;
+                    const positions = flareGeometry.attributes.position.array;
+                    for (let i = 0; i < positions.length; i += 3) {
+                        positions[i + 2] += Math.sin(Date.now() * 0.001 + i) * 0.01;
+                    }
+                    flareGeometry.attributes.position.needsUpdate = true;
+                    controls.update();
+                    renderer.render(scene, camera);
+                }
+                animate();
+
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    const width = canvasContainer.clientWidth;
+                    renderer.setSize(width, 500);
+                    camera.aspect = width / 500;
+                    camera.updateProjectionMatrix();
+                });
+
+            } catch (e) {
+                console.error('Error initializing 3D scene:', e.message);
+                if (fallback) fallback.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

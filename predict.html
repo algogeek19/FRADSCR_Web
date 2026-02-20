@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Page</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+
+    <section id="predict1" class="predict-section">
+        <div class="container">
+            <h2>Predict Solar Flare Features</h2>
+            <form id="predictionForm">
+                <label for="inputValue">Enter the Year:</label>
+                <input type="number" id="inputValue" name="inputValue" required>
+                <button type="submit" id="predictButton">Predict</button>
+            </form>
+            <div id="predictionResult">
+                <!-- Prediction result will be displayed here -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('predictionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const inputValue = document.getElementById('inputValue').value;
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ input: inputValue })
+            })
+            .then(response => response.json())
+            .then(data => {
+                let result = 'Predicted features for year ' + inputValue + ':<br>';
+                for (const [key, value] of Object.entries(data)) {
+                    result += `${key}: ${value.toFixed(2)}<br>`;
+                }
+                document.getElementById('predictionResult').innerHTML = result;
+            })
+            .catch(error => {
+                document.getElementById('predictionResult').innerText = 'Error: ' + error;
+            });
+        });
+    </script>
+
+</body>
+</html>
